@@ -1,5 +1,15 @@
+import Header from './components/Header';
+import './index.css';
+
 function App() {
-  return <div>Feedback App</div>;
+  return (
+    <>
+      <Header />
+      <div className='container'>
+        <h1>My App</h1>
+      </div>
+    </>
+  );
 }
 
 export default App;
