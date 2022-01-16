@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Card from './shared/Card';
 
 function FeeddbackItem({ item }) {
@@ -9,8 +11,8 @@ function FeeddbackItem({ item }) {
   );
 }
 
-Card.defaultProps = {
-  reverse: false,
+FeeddbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default FeeddbackItem;
