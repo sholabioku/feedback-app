@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import FeedbackContext from '../context/FeedbackContext';
 
 import FeeddbackItem from './FeeddbackItem';
+import Spinner from './shared/Spinner';
 
 function FeedbackList() {
   const { feedback, isLoading } = useContext(FeedbackContext);
@@ -12,7 +13,7 @@ function FeedbackList() {
   }
 
   return isLoading ? (
-    <h3>Loading...</h3>
+    <Spinner />
   ) : (
     <div className='feedback-list'>
       <AnimatePresence>
