@@ -23,14 +23,16 @@ export const FeedbackProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm('Are you sure you want to delete?')) {
+      await fetch(`/feedback/${id}`, { method: 'DELETE' });
+
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
 
   const addFeedback = async (newFeedback) => {
-    const response = await fetch(`/feedback`, {
+    const response = await fetch('/feedback', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newFeedback),
